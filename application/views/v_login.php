@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/vendor/animate/animate.css') ?>">
-	<link type="text/css" href="<?php base_url('vendor/sweetalert2/sweetalert2.min.css')?>" rel="stylesheet">
+	<link type="text/css" href="<?php base_url('assets/vendor/sweetalert2/sweetalert2.min.css')?>" rel="stylesheet">
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/vendor/css-hamburgers/hamburgers.min.css') ?>">
 <!--===============================================================================================-->
@@ -84,6 +84,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</script>
 <!--===============================================================================================-->
 	<script src="<?= base_url('assets/login/js/main.js') ?>"></script>
-	<script src="<?php base_url('vendor/sweetalert2/sweetalert2.min.js') ?>"></script>
+	<script src="<?php base_url('assets/vendor/sweetalert2/sweetalert2.min.js') ?>"></script>
 </body>
 </html>

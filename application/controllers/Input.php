@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require 'vendor/autoload.php';
+require 'assets/vendor/autoload.php';
 
 use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
