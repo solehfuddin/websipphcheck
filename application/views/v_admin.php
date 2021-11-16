@@ -53,7 +53,7 @@
                                         <img src="<?= base_url('assets/admin/img/64-64.jpg') ?>" alt="" class="img-rounded" />
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">Jhon Deo Alex </h4>
+                                        <h4 class="media-heading"><?= $this->session->userdata('username') ?></h4>
                                         <h5>Developer & Designer</h5>
 
                                     </div>
@@ -86,7 +86,7 @@
                             <li><a href="forms.html">Forms</a></li>
                              <li><a href="login.html">Login Page</a></li>
                             <li><a href="blank.html">Blank Page</a></li>
-
+							<li><a href="blank.html">Logout</a></li>
                         </ul>
                     </div>
                 </div>
