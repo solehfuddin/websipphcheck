@@ -6,13 +6,13 @@ class Login extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-
+		$this->load->library('session');
 		$this->load->model('UserModel');
 	}
 	
 	public function index()
 	{
-		if($this->session->userdata('is_login')){
+		if($this->session->userdata('is_login') == true){
 			redirect('dashpanel');
 		}
 		
@@ -32,10 +32,12 @@ class Login extends CI_Controller {
                     'username'  => $cek['username'],
 					'is_login' => true
                 );
+				
             $this->session->set_userdata($session_data);
 
 			$msg = [
 				'success' => [
+					'data' => $session_data,
 					'info' => 'Berhasil Login'
 				]
 			];

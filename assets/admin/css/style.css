@@ -48,6 +48,16 @@ body {
     margin-bottom: 40px;
 }
 
+.page-head-line-purple {
+    font-weight: 900;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #6200EA;
+    text-transform: uppercase;
+    color: #6200EA;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
 .btn {
     border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -73,6 +83,11 @@ cursor:pointer;
 background-color:#F0677C;
 -webkit-border-radius:50%;
     -moz-border-radius:50%;
+}
+
+.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
 }
 /* =============================================================
    HEADER SECTION STYLES
@@ -181,8 +196,15 @@ header {
 }
 
 .navbar-inverse {
-    background-color: #C36464;
+    /* background-color: #C36464; */
+    background-image: url("../../img/header.png");
     border-color: transparent;
+    min-height: 28vh;
+    width: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #fff;
 }
 
 .navbar-toggle {
@@ -214,6 +236,18 @@ footer {
 
 /* DASHBOARD ICONS */
 
+.alert-purple {
+    color: #fff;
+    background-color: #6200ee;
+    border-color: #B39DDB;
+}
+.alert-purple hr {
+    border-top-color: #B39DDB;
+}
+.alert-purple .alert-link {
+    color: #6200ee;
+}
+
 .bk-clr-one {
     background-color: #B9B739;
 }
@@ -227,6 +261,10 @@ footer {
 }
 
 .bk-clr-four {
+    background-color: #b739b9;
+}
+
+.bk-clr-five {
     background-color: #b739b9;
 }
 
@@ -311,4 +349,50 @@ footer {
 
 .btn-google {
     background-color: #c32f10;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #6200EA;
+    border-color: #6200EA;
+  }
+.btn-purple:hover,
+.btn-purple:focus,
+.btn-purple.focus,
+.btn-purple:active,
+.btn-purple.active,
+.open > .dropdown-toggle.btn-purple {
+    color: #fff;
+    background-color: #6200EA;
+    border-color: #6200EA;
+}
+.btn-purple:active,
+.btn-purple.active,
+.open > .dropdown-toggle.btn-purple {
+    background-image: none;
+  }
+.btn-purple.disabled,
+.btn-purple[disabled],
+  fieldset[disabled] .btn-purple,
+.btn-purple.disabled:hover,
+.btn-purple[disabled]:hover,
+  fieldset[disabled] .btn-purple:hover,
+.btn-purple.disabled:focus,
+.btn-purple[disabled]:focus,
+  fieldset[disabled] .btn-purple:focus,
+.btn-purple.disabled.focus,
+.btn-purple[disabled].focus,
+  fieldset[disabled] .btn-purple.focus,
+.btn-purple.disabled:active,
+.btn-purple[disabled]:active,
+  fieldset[disabled] .btn-purple:active,
+.btn-purple.disabled.active,
+.btn-purple[disabled].active,
+  fieldset[disabled] .btn-purple.active {
+    background-color: #6200EA;
+    border-color: #6200EA;
+}
+.btn-purple .badge {
+    color: #6200EA;
+    background-color: #fff;
 }

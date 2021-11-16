@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required : *****">
-						<input class="input100" type="password" name="pass" id="password" placeholder="Password">
+						<input class="input100" type="password" name="password" id="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -115,8 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				success:function(response){
 
                 if (response.success) {
-
-                  Swal.fire({
+				  Swal.fire({
                     type: 'success',
                     title: 'Login Berhasil!',
                     text: 'Anda akan di arahkan dalam 3 Detik',
@@ -127,33 +126,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   .then (function() {
                     window.location.href = "<?php echo base_url() ?>dashpanel";
                   });
-
-                }else {
+				}
+				else {
                   Swal.fire({
 					  icon: 'error',
 					  title: 'Oops...',
 					  text: response.error.info,
 				  })
-
-
                 }
-
                 console.log(response);
 
-              },
+              	},
 
-              error:function(response){
+				error:function(response){
 
-                  Swal.fire({
-                    type: 'error',
-                    title: 'Opps!',
-                    text: 'server error!'
-                  });
+					Swal.fire({
+						type: 'error',
+						title: 'Opps!',
+						text: 'server error!'
+					});
 
-                  console.log(response);
+					console.log(response);
 
-              }
-
+				}
             });
 		});
 		
