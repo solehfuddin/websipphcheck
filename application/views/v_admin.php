@@ -8,6 +8,10 @@
     <div class="content-wrapper">
         <div class="container">
             <div class="row">
+				<input type="file" name="image" accept="image/*" capture="user">
+				
+				<input type="file" name="article_imgubah" class="form-control" id="article_imgubah" 
+                    accept=".jpg, .jpeg, .png" />
                 <div class="col-md-12">
                     <h4 class="page-head-line-purple text-center">Aplikasi Ph Checker</h4>
                 </div>
