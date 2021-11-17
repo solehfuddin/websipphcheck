@@ -248,6 +248,19 @@ footer {
     color: #6200ee;
 }
 
+.alert-teal {
+    color: #424242;
+    background-color: #00BFA5;
+    border-color: #00BFA5;
+	font-weight: bold;
+}
+.alert-teal hr {
+    border-top-color: #00BFA5;
+}
+.alert-teal .alert-link {
+    color: #00BFA5;
+}
+
 .bk-clr-one {
     background-color: #B9B739;
 }
@@ -265,7 +278,7 @@ footer {
 }
 
 .bk-clr-five {
-    background-color: #b739b9;
+    background-color: #6200ee;
 }
 
 .dashboard-div-icon {

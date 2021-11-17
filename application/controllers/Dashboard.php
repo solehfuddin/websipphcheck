@@ -16,6 +16,8 @@ class Dashboard extends CI_Controller {
 			redirect('/');
 		}
 
-		$this->load->view('v_admin');
+		$this->load->view('layout/header');
+        $this->load->view('v_admin');
+        $this->load->view('layout/footer');
 	}
 }
