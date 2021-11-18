@@ -46,7 +46,7 @@ class History extends CI_Controller {
 										   
             $no++;
             $row = array();
-            $row[] = $no;
+            //$row[] = $no;
             $row[] = $this->session->userdata('username');
             $row[] = date("d-m-Y", strtotime($field->tgl_input));
             $row[] = $field->kode_ph;

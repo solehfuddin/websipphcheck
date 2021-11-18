@@ -43,11 +43,11 @@
 				<table id="tablehistory" class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th class="text-center col-md-1 col-xs-1">No.</th>
-							<th class="text-center col-md-2 col-xs-2">Nama</th>
-							<th class="text-center col-md-1 col-xs-3">Tgl Pengujian</th>
-							<th class="text-center col-md-1 col-xs-2">Kadar Ph</th>
-							<th class="text-center col-md-1 col-xs-3">Aksi</th>
+							<!-- <th class="text-center col-md-1 col-sm-1 col-xs-1">No.</th> -->
+							<th class="text-center col-md-2 col-sm-2 col-xs-2">Nama</th>
+							<th class="text-center col-md-1 col-sm-3 col-xs-3">Tgl Pengujian</th>
+							<th class="text-center col-md-1 col-sm-1 col-xs-1">Kadar Ph</th>
+							<th class="text-center col-md-1 col-sm-4 col-xs-4">Aksi</th>
 						</tr>
 					</thead>
 					<tbody class="text-center">
