@@ -34,7 +34,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<img src="<?= base_url('assets/login/images/img-01.png') ?>" alt="IMG">
 				</div>
 
-				<!-- <form class="login100-form validate-form" action="<?php echo base_url() ?>loginuser"> -->
 				<?= form_open('loginuser', ['class' => 'formLogin login100-form validate-form']); ?>
 					<span class="login100-form-title">
 						Member Login
@@ -61,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							Login
 						</button>
 					</div>
-				<!-- </form> -->
+
 				<?= form_close(); ?>
 			</div>
 		</div>

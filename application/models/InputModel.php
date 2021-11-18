@@ -15,6 +15,13 @@ class InputModel extends CI_Model {
 		return $result->result_array();
 	}
 	
+	function chooseData($kode)
+	{
+		$result = $this->db->get_where('t_input', array('id_input' => $kode));
+
+		return $result->row_array();
+	}
+	
 	function insertData($data)
 	{
 		return $result = $this->db->insert('t_input', $data);

@@ -14,9 +14,18 @@ class HistoryModel extends CI_Model {
         $this->load->database();
     }
  
-    private function _get_datatables_query($data)
+    private function _get_datatables_query($id, $stdate, $eddate)
     {
-        $this->db->where($data)->from($this->table);
+		/*if ($stdate == '' && $eddate == '')
+		{
+			$this->db->where($data)->from($this->table);
+		}
+        else
+		{
+			$this->db->where($data)->where('tgl_input >=', $stdate)->where('tgl_input <=', $eddate)->from($this->table);
+		}*/
+		
+		$this->db->where('id_user', $id)->where('tgl_input >=', $stdate)->where('tgl_input <=', $eddate)->from($this->table);
  
         $i = 0;
      
@@ -52,18 +61,18 @@ class HistoryModel extends CI_Model {
         }
     }
  
-    function get_datatables($data)
+    function get_datatables($data, $stdate, $eddate)
     {
-        $this->_get_datatables_query($data);
+        $this->_get_datatables_query($data, $stdate, $eddate);
         if($_POST['length'] != -1)
         $this->db->limit($_POST['length'], $_POST['start']);
         $query = $this->db->get();
         return $query->result();
     }
  
-    function count_filtered($data)
+    function count_filtered($data, $stdate, $eddate)
     {
-        $this->_get_datatables_query($data);
+        $this->_get_datatables_query($data, $stdate, $eddate);
         $query = $this->db->get();
         return $query->num_rows();
     }

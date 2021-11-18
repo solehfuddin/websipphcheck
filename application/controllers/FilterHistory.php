@@ -1,14 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class History extends CI_Controller {
+class FilterHistory extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->library('session');
-		$this->load->helper('url');
-        $this->load->helper('form');
 		$this->load->model('HistoryModel');
 		$this->load->model('InputModel');
 	}
@@ -20,52 +18,11 @@ class History extends CI_Controller {
 		}
 
 		$this->load->view('layout/header');
-        $this->load->view('v_history');
+        $this->load->view('v_filterhistory');
         $this->load->view('layout/footer');
 	}
 	
 	function get_data_user()
-    {
-		//$startdate = $this->input->post('filter_datefrom');
-		//$enddate = $this->input->post('filter_dateuntil');
-		$id = $this->session->userdata('id_user');
-		$startdate = date("Y-m-01");
-		$enddate = date("Y-m-d");
-		
-        $list = $this->HistoryModel->get_datatables($id, $startdate, $enddate);
-        $data = array();
-        $no = $_POST['start'];
-        foreach ($list as $field) {
-			$action = "<td> 
-							<button type=\"button\" class=\"btn btn-xs btn-purple\" 
-								onclick=\"viewdetail('" .$field->id_input. "')\"><i class=\"fa fa-file-text\"></i> </button> 
-							&nbsp;
-							<button type=\"button\" class=\"btn btn-xs btn-danger\" 
-								onclick=\"deletedetail('" .$field->id_input. "')\"><i class=\"fa fa-times\"></i> </button> 
-						</td>";
-										   
-            $no++;
-            $row = array();
-            $row[] = $no;
-            $row[] = $this->session->userdata('username');
-            $row[] = date("d-m-Y", strtotime($field->tgl_input));
-            $row[] = $field->kode_ph;
-			$row[] = $action;
- 
-            $data[] = $row;
-        }
- 
-        $output = array(
-            "draw" => $_POST['draw'],
-            "recordsTotal" => $this->HistoryModel->count_all(),
-            "recordsFiltered" => $this->HistoryModel->count_filtered($id, $startdate, $enddate),
-            "data" => $data,
-        );
-        //output dalam format JSON
-        echo json_encode($output);
-    }
-	
-	function get_data_user_filter()
     {
 		//$startdate = $this->input->post('filter_datefrom');
 		//$enddate = $this->input->post('filter_dateuntil');
