@@ -34,13 +34,13 @@
                     </div>
                  </a>
 
-                 <a href="<?= site_url('historyuser') ?>" class="col-md-3 col-sm-3 col-xs-6">
+				 <a href="<?= site_url('historyfilter') ?>" class="col-md-3 col-sm-3 col-xs-6">
                     <div class="dashboard-div-wrapper bk-clr-five">
                          <i class="fa fa-list-alt dashboard-div-icon" ></i>
                        
                          <h5>Hasil Cek Ph </h5>
                     </div>
-                </a>
+                 </a>
             </div>
                 
             <div class="row">

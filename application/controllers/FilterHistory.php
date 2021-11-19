@@ -7,34 +7,28 @@ class FilterHistory extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('session');
-		$this->load->model('HistoryModel');
+		$this->load->model('FilterHistoryModel');
 		$this->load->model('InputModel');
+		
+		if($this->session->userdata('is_login') == false){
+			redirect('/');
+		}
 	}
 	
 	public function index()
 	{
-		if($this->session->userdata('is_login') == false){
-			redirect('/');
-		}
-
 		$this->load->view('layout/header');
         $this->load->view('v_filterhistory');
         $this->load->view('layout/footer');
 	}
 	
-	function get_data_user()
+	public function ajax_list()
     {
-		//$startdate = $this->input->post('filter_datefrom');
-		//$enddate = $this->input->post('filter_dateuntil');
-		$id = $this->session->userdata('id_user');
-		$startdate = '2021-11-08';
-		$enddate = '2021-11-10';
-		
-        $list = $this->HistoryModel->get_datatables($id, $startdate, $enddate);
+        $list = $this->FilterHistoryModel->get_datatables();
         $data = array();
         $no = $_POST['start'];
         foreach ($list as $field) {
-			$action = "<td> 
+           $action = "<td> 
 							<button type=\"button\" class=\"btn btn-xs btn-purple\" 
 								onclick=\"viewdetail('" .$field->id_input. "')\"><i class=\"fa fa-file-text\"></i> </button> 
 							&nbsp;
@@ -42,9 +36,7 @@ class FilterHistory extends CI_Controller {
 								onclick=\"deletedetail('" .$field->id_input. "')\"><i class=\"fa fa-times\"></i> </button> 
 						</td>";
 										   
-            $no++;
             $row = array();
-            $row[] = $no;
             $row[] = $this->session->userdata('username');
             $row[] = date("d-m-Y", strtotime($field->tgl_input));
             $row[] = $field->kode_ph;
@@ -55,11 +47,11 @@ class FilterHistory extends CI_Controller {
  
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->HistoryModel->count_all(),
-            "recordsFiltered" => $this->HistoryModel->count_filtered($id, $startdate, $enddate),
+            "recordsTotal" => $this->FilterHistoryModel->count_all(),
+            "recordsFiltered" => $this->FilterHistoryModel->count_filtered(),
             "data" => $data,
         );
-        //output dalam format JSON
+
         echo json_encode($output);
     }
 	

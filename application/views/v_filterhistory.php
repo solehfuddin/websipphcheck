@@ -8,20 +8,41 @@
     <div class="content-wrapper">
         <div class="container">          
            <div class="row">
-                <div class="col-md-11 col-sm-11 col-xs-10">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="page-head-line-purple text-center">List Pengujian</h4>
                 </div>
-				<div class="col-md-1 col-sm-1 col-xs-2">
-					<button type="button" class="btn btn-purple" onclick="filterData()">
-						<i class="fa fa-calendar-o" ></i>
+           </div>
+		   <div class="row">
+				<form id="form-filter">
+				<div class="col-md-5 col-xs-12">
+					<div class="form-group">
+						<label class="form-control-label">Start date</label>
+						<input data-toggle="datepicker" class="form-control" type="text" placeholder="Pilih Tanggal" 
+							name="filter_datefrom" id="filter_datefrom" />
+					</div>
+				</div>
+				<div class="col-md-5 col-xs-12">
+					<div class="form-group">
+						<label class="form-control-label">End date</label>
+						<input data-toggle="datepicker" class="form-control datepicker" type="text" placeholder="Pilih Tanggal" 
+							name="filter_dateuntil" id="filter_dateuntil" />
+					</div>
+				</div>
+				<div class="col-md-1 col-xs-12">
+					<br/>
+					<button type="button" id="btn-filterdata" class="btn btn-primary btn-sm mt-3" style="margin-top: 7px;">
+						 Filter Data
 					</button>
 				</div>
-           </div>
+				</form>
+			</div>
+			<br/>
+		   
 		   <div class="table-responsive">
 				<table id="tablehistoryfilter" class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th class="text-center col-md-1 col-xs-1">No.</th>
+							<!-- <th class="text-center col-md-1 col-xs-1">No.</th> -->
 							<th class="text-center col-md-2 col-xs-2">Nama</th>
 							<th class="text-center col-md-1 col-xs-3">Tgl Pengujian</th>
 							<th class="text-center col-md-1 col-xs-2">Kadar Ph</th>

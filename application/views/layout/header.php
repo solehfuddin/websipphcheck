@@ -8,8 +8,9 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Free Responsive Admin Theme - ZONTAL</title>
+    <title>Web Cek Ph</title>
     <!-- BOOTSTRAP CORE STYLE  -->
+	<link rel="icon" type="image/png" href="<?= base_url('assets/login/images/icons/favicon.ico') ?>"/>
     <link href="<?= base_url('assets/admin/css/bootstrap.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/admin/css/datepicker.css') ?>" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
