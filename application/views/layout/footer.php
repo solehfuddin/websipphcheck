@@ -51,9 +51,14 @@
 	 
 		});
 		
-		 $('#btn-filterdata').click(function(){
+		$('#btn-filterdata').click(function(){
 			table.ajax.reload();
 		});
+
+		function chooseSource(){
+			// alert("ok");
+			$('#modaltakeimg').modal('show');
+		}
 
 		function viewdetail($kode) {
 			$.ajax({

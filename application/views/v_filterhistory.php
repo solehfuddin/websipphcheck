@@ -97,34 +97,3 @@
         </div>
     </div>
 </div>
-
-<!-- Modal Filter Data -->
- <div class="modal fade" id="modalfilterdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="text-center">Filter Data Pengujian</h4>
-        </div>
-        
-		<?= form_open('historyfilter', ['class' => 'formFilterData']); ?>
-        <div class="modal-body">
-                <div class="form-group">
-                  <label for="nama-infocategory-input" class="form-control-label">Tanggal Awal</label>
-                  <input data-toggle="datepicker" class="form-control" type="text" placeholder="Pilih Tanggal" 
-                        name="filter_datefrom" id="filter_datefrom" />
-                </div>
-				
-				<div class="form-group">
-                  <label for="nama-infocategory-input" class="form-control-label">Sampai Tanggal</label>
-                  <input data-toggle="datepicker" class="form-control datepicker" type="text" placeholder="Pilih Tanggal" 
-                        name="filter_dateuntil" id="filter_dateuntil" />
-                </div>
-        </div>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-purple btnfilterdata">Filter</button>
-        </div>
-		
-		<?= form_close(); ?>
-        </div>
-    </div>
-</div>
