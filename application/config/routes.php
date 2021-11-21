@@ -57,5 +57,6 @@ $route['showfilter'] = 'filterhistory/ajax_list';
 $route['choosehistory'] = 'filterhistory/pilihdata';
 $route['deletehistory'] = 'filterhistory/hapusdata';
 $route['dashpanel'] = 'dashboard';
+$route['uploadimg'] = 'dashboard/uploadprocess';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

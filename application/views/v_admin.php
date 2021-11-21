@@ -59,21 +59,22 @@
             <h4 class="text-center">Pilih Gambar</h4>
         </div>
         
-        <?= form_open('historyfilter', ['class' => 'formFilterData']); ?>
+        <?= form_open('uploadimg', ['class' => 'formUploadImage']); ?>
         <div class="modal-body">
                 <div class="form-group">
                     <label for="nama-infocategory-input" class="form-control-label">Pilih Foto</label>
-                    <input type="file" name="image" class="form-control" accept="image/*" capture="user">
+                    <input type="file" name="capture_camera" id="capture_camera" class="form-control" accept="image/*" 
+                        capture="user">
                 </div>
 
                 <div class="form-group">
                     <label for="nama-infocategory-input" class="form-control-label">Atau Pilih Galeri</label>
-                    <input type="file" name="article_imgubah" class="form-control" id="article_imgubah" 
+                    <input type="file" name="capture_galery" class="form-control" id="capture_galery" 
                     accept=".jpg, .jpeg, .png" />
                 </div>
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-purple btnfilterdata">Upload</button>
+            <button type="submit" class="btn btn-purple btnuploadimg">Upload</button>
         </div>
         
         <?= form_close(); ?>
