@@ -30,7 +30,8 @@ class Input extends CI_Controller {
 				//var_dump(Color::fromIntToHex($color));
 				
 				if ($counter == 0) {
-					$output = $this->hexToRgb(Color::fromIntToHex($color));
+					// $output = $this->hexToRgb(Color::fromIntToHex($color));
+					$output = Color::fromIntToHex($color);
 					echo $output;
 				}
 			}

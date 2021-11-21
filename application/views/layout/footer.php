@@ -81,6 +81,62 @@
 				}
 			});
 		}
+
+		$(document).ready(function() {
+			$('.formUploadImage').submit(function(e) {
+				e.preventDefault();
+
+				let data = new FormData(this);
+
+				$.ajax({
+					type: "post",
+					url: $(this).attr('action'),
+					enctype: 'multipart/form-data',
+					processData: false,
+					contentType: false,
+					cache: false,
+					data: data,
+					dataType: "json",
+					beforeSend: function() {
+						$('.btnuploadimg').prop('disabled', true);
+						$('.btnuploadimg').html('<i class="fa fa-spin fa-spinner"></i> Processing');
+					},
+					complete: function() {
+						$('.btnuploadimg').prop('disabled', false);
+						$('.btnuploadimg').html('Ubah');
+					},
+					success: function(response) {
+						if (response.error){
+							Swal.fire(
+								'Pemberitahuan',
+								response.error.data,
+								'error',
+							).then(function() {
+								$('#datatable-accountuser').DataTable().ajax.reload();
+							});
+						}
+						else
+						{
+							$('#capture_camera').val('');
+							$('#capture_galery').val('');
+							$('#modaltakeimg').modal('hide');
+
+							document.getElementById("color_hex").style.backgroundColor = response.success.kode_warna;
+							$('label[for="detail_hex"]').text("Hex : " + response.success.kode_warna);
+							$('label[for="detail_kadar"]').text("Kadar pH : " + response.success.kode_ph);
+							$('label[for="detail_kategori"]').text("Kategori pH : " + response.success.kategori_ph);
+							
+							$('#modalviewdetail').modal('show');
+						}
+					},
+					error: function(xhr, ajaxOptions, thrownError) {
+						alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+					}
+				});
+
+				return false;
+			});
+		});
 		
 		function deletedetail($kode) {
 		  Swal.fire({
