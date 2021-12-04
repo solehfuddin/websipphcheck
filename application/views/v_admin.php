@@ -8,10 +8,6 @@
     <div class="content-wrapper">
         <div class="container">
             <div class="row">
-				<!-- <input type="file" name="image" accept="image/*" capture="user">
-				
-				<input type="file" name="article_imgubah" class="form-control" id="article_imgubah" 
-                    accept=".jpg, .jpeg, .png" /> -->
                 <div class="col-md-12">
                     <h4 class="page-head-line-purple text-center">Aplikasi Ph Checker</h4>
                 </div>
@@ -41,6 +37,26 @@
                          <h5>Hasil Cek Ph </h5>
                     </div>
                  </a>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <h4 class="page-head-line-purple text-center">Riwayat Pengujian Terbaru</h4>
+                    <div class="table-responsive">
+                        <table id="tablehistory" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <!-- <th class="text-center col-md-1 col-xs-1">No.</th> -->
+                                    <th class="text-center col-md-2 col-xs-2">Nama</th>
+                                    <th class="text-center col-md-1 col-xs-3">Tgl Pengujian</th>
+                                    <th class="text-center col-md-1 col-xs-2">Kadar Ph</th>
+                                    <th class="text-center col-md-1 col-xs-3">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
                 
             <div class="row">

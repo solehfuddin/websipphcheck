@@ -53,6 +53,7 @@ $route['default_controller'] = 'login';
 $route['loginuser'] = 'login/loginacc';
 $route['logoutuser'] = 'login/logoutacc';
 $route['historyfilter'] = 'filterhistory';
+$route['showhistory'] = 'Dashboard/ajax_list';
 $route['showfilter'] = 'filterhistory/ajax_list';
 $route['choosehistory'] = 'filterhistory/pilihdata';
 $route['deletehistory'] = 'filterhistory/hapusdata';

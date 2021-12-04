@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('UserModel');
+		$this->load->model('HistoryModel');
 		$this->load->model('InputModel');
 	}
 	
@@ -27,6 +28,39 @@ class Dashboard extends CI_Controller {
         $this->load->view('v_admin');
         $this->load->view('layout/footer');
 	}
+
+	public function ajax_list()
+    {
+        $list = $this->HistoryModel->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $field) {
+           $action = "<td> 
+							<button type=\"button\" class=\"btn btn-xs btn-purple\" 
+								onclick=\"viewdetail('" .$field->id_input. "')\"><i class=\"fa fa-file-text\"></i> </button> 
+							&nbsp;
+							<button type=\"button\" class=\"btn btn-xs btn-danger\" 
+								onclick=\"deletedetail('" .$field->id_input. "')\"><i class=\"fa fa-times\"></i> </button> 
+						</td>";
+										   
+            $row = array();
+            $row[] = $this->session->userdata('username');
+            $row[] = date("d-m-Y", strtotime($field->tgl_input));
+            $row[] = $field->kode_ph;
+			$row[] = $action;
+ 
+            $data[] = $row;
+        }
+ 
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->HistoryModel->count_all(),
+            "recordsFiltered" => $this->HistoryModel->count_filtered(),
+            "data" => $data,
+        );
+
+        echo json_encode($output);
+    }
 
 	public function uploadprocess()
 	{

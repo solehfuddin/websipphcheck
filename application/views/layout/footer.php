@@ -50,6 +50,24 @@
 			});
 	 
 		});
+
+		$(document).ready(function() {
+			$('#tablehistory').DataTable({ 
+				"processing": true, 
+				"serverSide": true, 
+				"order": [], 
+				"ajax": {
+					"url": "<?php echo site_url('showhistory')?>",
+					"type": "POST"
+				},			 
+				"columnDefs": [
+				{ 
+					"targets": [ 0 ], 
+					"orderable": false, 
+				},
+				],
+			});
+		});
 		
 		$('#btn-filterdata').click(function(){
 			table.ajax.reload();
