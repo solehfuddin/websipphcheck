@@ -51,8 +51,9 @@
 	 
 		});
 
+		var tbl;
 		$(document).ready(function() {
-			$('#tablehistory').DataTable({ 
+			tbl = $('#tablehistory').DataTable({ 
 				"processing": true, 
 				"serverSide": true, 
 				"order": [], 
@@ -138,6 +139,8 @@
 							$('#capture_camera').val('');
 							$('#capture_galery').val('');
 							$('#modaltakeimg').modal('hide');
+							
+							$('#tablehistory').DataTable().ajax.reload();
 
 							document.getElementById("color_hex").style.backgroundColor = response.success.kode_warna;
 							$('label[for="detail_hex"]').text("Hex : " + response.success.kode_warna);
@@ -183,6 +186,7 @@
 								  response.success.data,
 								  'success',
 							  ).then(function() {
+								  $('#tablehistory').DataTable().ajax.reload();
 								  $('#tablehistoryfilter').DataTable().ajax.reload();
 							  });
 						  }
